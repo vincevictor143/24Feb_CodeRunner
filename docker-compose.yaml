@@ -26,7 +26,8 @@ services:
   cucumberbdd:
     image:  attbatch1/dockerfinalimage
     depends_on:
-      - hub
+      - chrome
+      - firefox
     environment:
       - HUB_HOST=hub
     volumes:
