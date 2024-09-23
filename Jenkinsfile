@@ -1,5 +1,4 @@
 pipeline {
-
     agent any  // This will run the pipeline on any available agent
 
     stages 
@@ -10,9 +9,9 @@ pipeline {
             {
                 
                 bat "docker pull attbatch1/dockerfinalimage"
+
             }
         }
-
 
         stage('Start the Grid') 
         {
@@ -34,7 +33,6 @@ pipeline {
 
     }
 
-
     post 
 
     {
@@ -43,4 +41,5 @@ pipeline {
             bat "docker-compose down"
         }
     }
+
 }
