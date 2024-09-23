@@ -2,20 +2,25 @@ pipeline {
 
     agent any  // This will run the pipeline on any available agent
 
-    stages {
-        stage('Execute the test cases') {
-            steps {
-                script {
-                    timeout(time: 20, unit: 'MINUTES') {
+    stages 
+    {
+        
+        stage('Execute the test cases') 
+        {
+            steps
+            {
                         bat "docker-compose up"
-                    }
-                }
             }
         }
-    }
-    post {
-        always {
-            bat "docker-compose down"
+
+   stage('Bring down compose') 
+        {
+            steps
+            {
+                        bat "docker-compose up"
+                    
+            }
         }
+    
     }
 }
